@@ -15,7 +15,7 @@ test('Проверка страницы', async ({ page }) => {
   const landing = new Landing(page);
   await landing.open();
   await page.getByRole('list').filter({ hasText: 'СервисТарифыКонтакты' }).locator('span').click();
-  await page.getByRole('tooltip').getByRole('link', { name: 'Аналитика конкурентов' }).click();
+  await expect(page.getByRole('heading', { name: 'Финансовая аналитика' })).toBeVisible();
   await page.getByRole('link', { name: 'Подробнее' }).first().click();
   await expect(page.getByRole('heading', { name: 'Регистрация' })).toBeVisible();
 });
