@@ -68,4 +68,12 @@ test.describe('Группа тестов с разрешением 1920x1080', (
     await page.getByRole('button', { name: 'Получить ссылку' }).click();
     await expect(page.getByText('Успешно!')).toBeVisible();
   });
+
+  test('Проверка глаза на странице авторизации', async ({ page }) => {
+    await page.goto('https://test-server-pro.ru/signin');
+    await page.locator('form path').first().click();
+    await expect(page.locator('form').getByRole('img')).toBeVisible();
+    await page.locator('form').getByRole('img').click();
+    await expect(page.locator('form path').nth(1)).toBeVisible();
+  });
 });

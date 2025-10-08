@@ -143,7 +143,7 @@ test.describe('Группа тестов с разрешением 1920x1080', (
     await expect(page.getByText('Промокод недействителен')).toBeVisible();
   });
 
-  test('Проверка глаза', async ({ page }) => {
+  test('Проверка глаза на странице регистрации', async ({ page }) => {
     await page.goto('https://test-server-pro.ru/signup');
     await page.locator('form path').nth(1).click();
     await expect(page.locator('form').getByRole('img')).toBeVisible();
