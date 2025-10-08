@@ -203,9 +203,15 @@ test('Проверка формы Напишите нам', async ({ page }) => 
     page.locator('#phone_help').getByText('Пожалуйста, заполните это поле!'),
   ).toBeVisible();
   await page.getByRole('textbox', { name: 'Телефон*' }).click();
+  await page.getByRole('textbox', { name: 'Телефон*' }).fill('+7п');
+  await page.getByRole('textbox', { name: 'Телефон*' }).click();
+  await expect(page.getByText('Пожалуйста, введите корректный номер телефона')).toBeVisible();
   await page.getByRole('textbox', { name: 'Телефон*' }).fill('+9 811 111 11 11');
   await page.getByRole('button', { name: 'Отправить' }).click();
   await expect(page.getByText('Пожалуйста, заполните это поле!')).toBeVisible();
+  await page.getByRole('textbox', { name: 'E-mail*' }).click();
+  await page.getByRole('textbox', { name: 'E-mail*' }).fill('ывпывпывпывп');
+  await expect(page.getByText('Пожалуйста, введите корректный email!')).toBeVisible();
   await page.getByRole('textbox', { name: 'E-mail*' }).click();
   await page.getByRole('textbox', { name: 'E-mail*' }).fill('staf118@mail.ru');
   await page.getByRole('button', { name: 'Отправить' }).click();
