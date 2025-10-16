@@ -396,3 +396,102 @@ test.describe('Группа тестов с разрешением 1920x1080', (
     ).toBeVisible();
   });
 });
+
+test('Проверка лэйаута 1440x900 ', async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 900 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-1440x900.png',
+  );
+});
+
+test('Проверка лэйаута 1366x768 ', async ({ page }) => {
+  await page.setViewportSize({ width: 1366, height: 768 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-1366x768.png',
+  );
+});
+
+test('Проверка лэйаута 1280x720 ', async ({ page }) => {
+  await page.setViewportSize({ width: 1280, height: 720 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-1280x720.png',
+  );
+});
+
+test('Проверка лэйаута 1200x800 ', async ({ page }) => {
+  await page.setViewportSize({ width: 1200, height: 800 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-1200x800.png',
+  );
+});
+
+test('Проверка лэйаута 1024x768 ', async ({ page }) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-1024x768.png',
+  );
+});
+
+test('Проверка лэйаута 768x1024 ', async ({ page }) => {
+  await page.setViewportSize({ width: 768, height: 1024 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.getByText('Аналитика магазина').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-768x1024.png',
+  );
+});
+
+test('Проверка лэйаута 390x844 ', async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.locator('.PlatformTabs_tab__JMvEw.PlatformTabs_tab--active__2Yw1F').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-390x844.png',
+  );
+});
+
+test('Проверка лэйаута 360x780 ', async ({ page }) => {
+  await page.setViewportSize({ width: 360, height: 780 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.locator('.PlatformTabs_tab__JMvEw.PlatformTabs_tab--active__2Yw1F').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-360x780.png',
+  );
+});
+
+test('Проверка лэйаута 412x917 ', async ({ page }) => {
+  await page.setViewportSize({ width: 412, height: 917 });
+  await page.goto('https://test-server-pro.ru/');
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toBeVisible();
+  await page.locator('.PlatformTabs_tab__JMvEw.PlatformTabs_tab--active__2Yw1F').click();
+  await page.waitForTimeout(5000);
+  await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
+    'landing-412x917.png',
+  );
+});

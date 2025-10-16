@@ -120,7 +120,6 @@ test.describe('Группа тестов с разрешением 1920x1080', (
 
   test('Проверка промокода с невалидным значением', async ({ page }) => {
     await page.goto('https://test-server-pro.ru/signup');
-    await page.goto('https://test-server-pro.ru/signup');
     await page.getByRole('textbox', { name: 'ФИО*' }).click();
     await page.getByRole('textbox', { name: 'ФИО*' }).fill('Тестовый Тест Тестович');
     await page.getByRole('main').getByText('Хочу продавать на маркетплейсах').click();
@@ -140,7 +139,7 @@ test.describe('Группа тестов с разрешением 1920x1080', (
     await page.getByRole('textbox', { name: 'Промокод' }).click();
     await page.getByRole('textbox', { name: 'Промокод' }).fill('asd');
     await page.getByRole('button', { name: 'Зарегистрироваться' }).click();
-    await expect(page.getByText('Промокод недействителен')).toBeVisible();
+    await expect(page.getByText('Промокод недействителен')).toBeVisible({ timeout: 3000 });
   });
 
   test('Проверка глаза на странице регистрации', async ({ page }) => {
