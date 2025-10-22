@@ -405,6 +405,7 @@ test('Проверка лэйаута 1440x900 ', async ({ page }) => {
   await page.waitForTimeout(5000);
   await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
     'landing-1440x900.png',
+    { timeout: 5000 },
   );
 });
 
@@ -427,6 +428,7 @@ test('Проверка лэйаута 1280x720 ', async ({ page }) => {
   await page.waitForTimeout(5000);
   await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
     'landing-1280x720.png',
+    { timeout: 5000 },
   );
 });
 
@@ -438,6 +440,7 @@ test('Проверка лэйаута 1200x800 ', async ({ page }) => {
   await page.waitForTimeout(5000);
   await expect(page.locator('.__variable_93a0e0.__variable_fe7774')).toHaveScreenshot(
     'landing-1200x800.png',
+    { timeout: 5000 },
   );
 });
 
