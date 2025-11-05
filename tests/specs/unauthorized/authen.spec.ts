@@ -63,8 +63,8 @@ test.describe('Группа тестов с разрешением 1920x1080', (
   test('Восстановление пароля', async ({ page }) => {
     await page.goto('https://test-server-pro.ru/signin');
     await page.getByRole('link', { name: 'Забыли пароль?' }).click();
-    await page.getByRole('textbox', { name: 'Указанный при регистрации' }).click();
-    await page.getByRole('textbox', { name: 'Указанный при регистрации' }).fill('staf118@mail.ru');
+    await page.getByRole('textbox', { name: 'E-mail *' }).click();
+    await page.getByRole('textbox', { name: 'E-mail *' }).fill('staf118@mail.ru');
     await page.getByRole('button', { name: 'Получить ссылку' }).click();
     await expect(page.getByText('Успешно!')).toBeVisible();
   });
